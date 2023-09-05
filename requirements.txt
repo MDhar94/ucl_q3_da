@@ -1,6 +1,5 @@
 pandas
-random
+# random
 numpy
 itertools
 plotly.express
-plotly

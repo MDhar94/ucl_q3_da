@@ -13,7 +13,7 @@ st.header('Multiple simulation generator')
 simulation_n = st.text_input('Please enter how many simulations to run:',"")
 winners = {}
 
-if simulation_n != "":  
+if simulation_n != "":
 
     for i in range(int(simulation_n)):
 
