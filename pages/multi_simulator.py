@@ -39,12 +39,12 @@ if simulation_n != "":
                             , index=[1]).transpose().rename(columns={1:'Wins'}).sort_values(by=['Wins']
                                                                                             , ascending=False)
 
-    winner_df['Percentage'] = round((winner_df['Wins'] / winner_df['Wins'].sum())*100,0)
-
-    winner_chart = px.bar(winner_df['Wins'],labels={"value": "Number of wins"
-                                            ,"index": "Teams"
-                                            ,'variable':'Metrics'}
-                                    ,text=[f'{round(p/int(simulation_n)*100,0)}%' for p in winner_df['Wins']])
+    winner_chart = px.bar(winner_df['Wins']
+                          ,labels={"value": "Number of wins"
+                                   ,"index": "Teams"
+                                   ,'variable':'Metrics'}
+                            ,text=[f'{round(p/int(simulation_n)*100,0)}%' for p in winner_df['Wins']]
+                            ,width=800, height=400)
 
     winner_chart.update_traces(textfont_size=12, textangle=0, cliponaxis=False, textposition="outside")
 
@@ -52,6 +52,6 @@ if simulation_n != "":
     winner_chart.update_layout(
     font=dict(
         family="Courier New, monospace",
-        size=15))
+        size=18))
 
     st.plotly_chart(winner_chart)
