@@ -44,7 +44,7 @@ if simulation_n != "":
                                    ,"index": "Teams"
                                    ,'variable':'Metrics'}
                             ,text=[f'{round(p/int(simulation_n)*100,0)}%' for p in winner_df['Wins']]
-                            , height=600)
+                            , height=500)
 
     winner_chart.update_traces(textfont_size=12, textangle=0, cliponaxis=False, textposition="outside")
 
